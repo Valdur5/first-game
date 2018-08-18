@@ -27,11 +27,11 @@ public class Application {
     public CommandLineRunner run() {
         return args -> {
             Player player = playerClient.createPlayer();
-            playerClient.getPlayer(player.getPlayerId());
-            player = playerClient.addExpToPlayer(player.getPlayerId(), 1000);
+            playerClient.getPlayer(player.getId());
+            player = playerClient.addExpToPlayer(player.getId(), 1000);
             System.out.println(player.getLevel());
-            player = playerClient.addExpToPlayer(player.getPlayerId(), 1000);
-            player = playerClient.addExpToPlayer(player.getPlayerId(), 1000);
+            player = playerClient.addExpToPlayer(player.getId(), 1000);
+            player = playerClient.addExpToPlayer(player.getId(), 1000);
             System.out.println(player.getLevel());
             Position position = mapClient.getPosition(22);
             System.out.println(position.getX()+ " "+position.getY());
