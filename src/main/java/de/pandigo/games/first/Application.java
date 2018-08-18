@@ -1,7 +1,7 @@
 package de.pandigo.games.first;
 
-import de.pandigo.games.first.domain.clients.PlayerClient;
-import de.pandigo.games.first.domain.entities.Player;
+import de.pandigo.games.first.domain.client.PlayerClient;
+import de.pandigo.games.first.domain.entity.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
