@@ -1,6 +1,8 @@
 package de.pandigo.games.first;
 
+import de.pandigo.games.first.domain.client.MapClient;
 import de.pandigo.games.first.domain.client.PlayerClient;
+import de.pandigo.games.first.domain.entity.map.Position;
 import de.pandigo.games.first.domain.entity.player.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +15,9 @@ public class Application {
 
     @Autowired
     private PlayerClient playerClient;
+
+    @Autowired
+    private MapClient mapClient;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -28,6 +33,8 @@ public class Application {
             player = playerClient.addExpToPlayer(player.getPlayerId(), 1000);
             player = playerClient.addExpToPlayer(player.getPlayerId(), 1000);
             System.out.println(player.getLevel());
+            Position position = mapClient.getPosition(22);
+            System.out.println(position.getX()+ " "+position.getY());
         };
     }
 }
